@@ -20,14 +20,18 @@
 	});
 </script>
 
-<header class="fixed top-0 left-0 right-0 z-10 bg-white shadow flex justify-between items-center px-4 py-3"
+<header class="fixed top-0 left-0 right-0 z-10 bg-white shadow flex justify-between items-center px-4 py-3 "
 		style="{style}">
-	<div class="flex justify-between items-center px-4 py-3">
+	<div class="flex justify-between items-center px-4 py-3 ">
 		<button class="text-gray-500 hover:text-gray-600 lg:hidden" on:click={toggleMenu}>
-			<svg class="fill-current h-6 w-6" viewBox="0 0 24 24">
-				<path x-show="{!isMenuOpen}" fill-rule="evenodd" clip-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
-				<path x-show="{isMenuOpen}" fill-rule="evenodd" clip-rule="evenodd" d="M6 18L18 6M6 6l12 12" />
-			</svg>
+			<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<title>Menu</title>
+				{#if isMenuOpen}
+				<path show="{!isMenuOpen}" fill-rule="evenodd" clip-rule="evenodd" d="M3 6h14v2H3V6zm0 7h14v2H3v-2zm0 5h14v2H3v-2z" />
+				{:else}
+				<path show="{isMenuOpen}" fill-rule="evenodd" clip-rule="evenodd" d="M4 4h12v2H4V4zm0 6h12v2H4v-2zm0 6h12v2H4v-2z" />
+				{/if}
+			  </svg>
 		</button>
 		<div class="hidden lg:block">
 			<h1 class="text-gray-800 text-lg font-bold">WKND</h1>
