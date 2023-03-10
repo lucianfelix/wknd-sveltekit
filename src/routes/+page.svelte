@@ -6,6 +6,7 @@
       <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">
         Your next adventures can be one of these...
       </h2>
+      {#if adventures}
       <div class="grid grid-cols-1 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {#each adventures as { _path, title, price, tripLength, primaryImage }}
           <AdventureCard
@@ -18,6 +19,9 @@
           />
         {/each}
       </div>
+      {:else}
+          <div>Adventure could not be loaded. AEM Backend likely hybernated</div>
+      {/if}
     </div>
   </div>
 </section>

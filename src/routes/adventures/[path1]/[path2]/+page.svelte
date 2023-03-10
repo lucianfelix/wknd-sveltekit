@@ -82,22 +82,19 @@
       </div>
     </article>
   {:else}
-    <div>Adventure not found</div>
+    <div>Adventure not found or AEM Backend hybernated</div>
   {/if}
 </div>
 
 <script>
 	import AemImage from '$lib/components/AemImage.svelte';
 
-
-  // import '../../../../app.css'
-
     /** @type {import('./$types').PageData} */
   export let data;
-  export let adventure = data.adventure;
-  console.log('adventure', adventure);
+  export let adventure = data?.adventure;
+  // console.log('adventure', adventure);
 
-  const imageSrcBase = data.NEXT_PUBLIC_AEM_HOST;
+  const imageSrcBase = data?.NEXT_PUBLIC_AEM_HOST;
   
   // export const revalidate = 60; // revalidate this page every 60 seconds
 </script>
