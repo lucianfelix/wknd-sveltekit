@@ -1,9 +1,31 @@
 {
-    "version": 3,
-    "images": {
-        "sizes": [384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-        "domains": ["https://publish-p64257-e147834-cmstg.adobeaemcloud.com"],
-        "minimumCacheTTL": 600,
-        "formats": ["image/avif", "image/webp"]
-    }
+	"version": 3,
+	"routes": [
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/adventures/([^/]+?)/([^/]+?)/?$",
+			"dest": "/adventures/[path1]/[path2]?__pathname=/adventures/$1/$2"
+		},
+		{
+			"src": "^/adventures/([^/]+?)/([^/]+?)/?/__data.json$",
+			"dest": "/adventures/[path1]/[path2]/__data.json?__pathname=/adventures/$1/$2"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		}
+	}
 }
