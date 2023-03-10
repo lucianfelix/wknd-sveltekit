@@ -1,8 +1,9 @@
 {
+    "version": 3,
     "images": {
-    "sizes": [384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    "domains": ["https://publish-p64257-e147834-cmstg.adobeaemcloud.com"],
-    "minimumCacheTTL": 600,
-    "formats": ["image/avif", "image/webp"]
-  }
+        "sizes": [384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+        "domains": ["https://publish-p64257-e147834-cmstg.adobeaemcloud.com"],
+        "minimumCacheTTL": 600,
+        "formats": ["image/avif", "image/webp"]
+    }
 }
