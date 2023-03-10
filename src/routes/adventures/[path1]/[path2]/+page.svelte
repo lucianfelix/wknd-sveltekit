@@ -10,8 +10,6 @@
                 alt={adventure.title}
                 width={1680}
                 height={320}
-                loading='eager'
-                sizes="50vw"
                 class="w-full h-full object-center object-cover lg:w-full lg:h-full"
               />
             </div>
@@ -79,7 +77,7 @@
 </div>
 
 <script>
-  import '../../../../app.css'
+  // import '../../../../app.css'
 
     /** @type {import('./$types').PageData} */
   export let data;
@@ -103,10 +101,6 @@
   }
   .aspect-w-1 {
     width: 100%;
-  }
-  .aspect-h-1 {
-    height: 0;
-    padding-bottom: 100%;
   }
 </style>
   

@@ -24,7 +24,7 @@
   
 <script>
   import AdventureCard from './AdventureCard.svelte';
-  import '../app.css'
+  // import '../app.css'
 
     /** @type {import('./$types').PageData} */
   export let data;

@@ -2,6 +2,7 @@
 	// import { page } from '$app/stores';
 	// import logo from '$lib/images/svelte-logo.svg';
 	// import github from '$lib/images/github.svg';
+	import "../app.postcss";
 </script>
 
 <header>
@@ -39,7 +40,7 @@
 </header>
 
 <style>
-	header {
+	/* header {
 		display: flex;
 		justify-content: space-between;
 	}
@@ -125,5 +126,5 @@
 
 	a:hover {
 		color: var(--color-theme-1);
-	}
+	} */
 </style>
