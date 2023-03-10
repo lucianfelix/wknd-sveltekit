@@ -13,8 +13,11 @@
 
 import AEMHeadless from '@adobe/aem-headless-client-js';
 
+export const NEXT_PUBLIC_AEM_HOST="https://publish-p64257-e147834-cmstg.adobeaemcloud.com"
+export const NEXT_GRAPHQL_ENDPOINT="/content/_cq_graphql/aem-demo-assets/endpoint.json"
+
 export class AdventureClient {
-  static fromEnv(env = process.env) {
+  static fromEnv(env /*= process.env*/) {
     if (!this.__envClient) {
       const { NEXT_PUBLIC_AEM_HOST, NEXT_GRAPHQL_ENDPOINT } = env;
       this.__envClient = new AdventureClient({
@@ -28,7 +31,7 @@ export class AdventureClient {
     this.aemHeadlessClient = new AEMHeadless({
       serviceURL,
       endpoint,
-      auth: ['admin', 'admin'], // TODO: dynamically set auth based on AEM instance
+      //auth: ['admin', 'admin'], // TODO: dynamically set auth based on AEM instance
       fetch
     });
   }

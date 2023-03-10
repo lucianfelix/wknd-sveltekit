@@ -1,12 +1,12 @@
 <!-- pages/[...path].svelte -->
-<template>
+<div>
     {#if adventure}
       <article>
         <div class="bg-white">
           <div class="pt-6">
             <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
-              <Image
-                src={`${NEXT_PUBLIC_AEM_HOST}${adventure.primaryImage._path}`}
+              <img
+                src={`${imageSrcBase}${adventure.primaryImage._path}`}
                 alt={adventure.title}
                 width={1680}
                 height={320}
@@ -53,7 +53,9 @@
               <div>
                 <h3 class="sr-only">Description</h3>
                 <div class="space-y-6">
-                  <div class="text-base text-gray-900" dangerouslySetInnerHTML={{ __html: adventure.description.html }}></div>
+                  <div class="text-base text-gray-900">
+                    {@html adventure.description.html}
+                  </div>
                 </div>
               </div>
 
@@ -61,7 +63,9 @@
                 <h2 class="text-base font-bold text-gray-900">Itinerary</h2>
 
                 <div class="mt-4 space-y-6">
-                  <div class="text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: adventure.itinerary.html }}></div>
+                  <div class="text-sm text-gray-600">
+                    {@html adventure.itinerary.html}
+                  </div>
                 </div>
               </div>
             </div>
@@ -72,36 +76,19 @@
   {:else}
     <div>Adventure not found</div>
   {/if}
-</template>
+</div>
 
 <script>
-  import Image from 'svelte-image';
-  import { AdventureClient } from '#/lib/adventures.js';
-  import { cache } from 'svelte';
+  import '../../../../../app.css'
+
+    /** @type {import('./$types').PageData} */
+  export let data;
+  export let adventure = data.adventure;
+  console.log('adventure', adventure);
+
+  const imageSrcBase = data.NEXT_PUBLIC_AEM_HOST;
   
-  export const revalidate = 60; // revalidate this page every 60 seconds
-  
-  const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
-  const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
-  
-  const getAdventureByPath = cache(async (path) => {
-    const client = AdventureClient.fromEnv();
-    const res = await client.getAdventureByPath(path);
-    const adventure = res?.data?.adventureByPath?.item;
-    return adventure;
-  });
-  
-  export async function load({ params }) {
-    const cfPath = `/content/dam/aem-demo-assets/en/adventures/${params.path.join('/')}`;
-    const adventure = await getAdventureByPath(cfPath);
-    return {
-      props: {
-        adventure
-      }
-    }
-  }
-  
-  export let adventure;
+  // export const revalidate = 60; // revalidate this page every 60 seconds
 </script>
 
 <style>
