@@ -14,7 +14,7 @@
     let aboveFold = false;
   
     onMount(() => {
-      aboveFold = ['Bali Surf Camp'].includes(title);
+      aboveFold = ['Bali Surf Camp', 'Beervana in Portland'].includes(title);
     });
   </script>
   
