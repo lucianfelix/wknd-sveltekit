@@ -2,10 +2,29 @@
 	import Header from './Header.svelte';
 	// import './styles.css';
 	import '../app.postcss';
-</script>
+
+	import { onMount } from 'svelte';
+  
+	let headerHeight = 64;
+  
+	onMount(() => {
+	  window.addEventListener('scroll', handleScroll);
+	});
+  
+	function handleScroll() {
+	  const scrollPosition = window.scrollY;
+  
+	  if (scrollPosition < 40) {
+		headerHeight = 70 - scrollPosition/2;
+	  } else {
+		headerHeight = 50;
+	  }
+	}
+  </script>
+  
 
 <div class="app">
-	<header />
+	<Header style="height: {headerHeight}px;"/>
 
 	<main>
 		<slot />
