@@ -41,7 +41,7 @@
       <p class="text-sm font-medium text-gray-900">{price}</p>
     </div>
     <h3 class="font-semibold text-gray-700">
-      <a href={"wknd"+href}>
+      <a href={href}>
         <div>
           <span aria-hidden="true" class="absolute inset-0" />
           {title}

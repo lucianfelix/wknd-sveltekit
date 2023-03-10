@@ -79,7 +79,7 @@
 </div>
 
 <script>
-  import '../../../../../app.css'
+  import '../../../../app.css'
 
     /** @type {import('./$types').PageData} */
   export let data;
