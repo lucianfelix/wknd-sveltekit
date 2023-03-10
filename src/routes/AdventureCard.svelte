@@ -11,11 +11,8 @@
     export let duration;
     export let imageSrc;
   
-    let aboveFold = false;
-  
-    onMount(() => {
-      aboveFold = ['Bali Surf Camp', 'Beervana in Portland'].includes(title);
-    });
+    const aboveFold = ['Bali Surf Camp', 'Beervana in Portland'].includes(title);
+
   </script>
   
   <div class="group relative">
