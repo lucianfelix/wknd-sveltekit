@@ -3,15 +3,8 @@
     {#if adventure}
       <article>
         <div class="bg-white">
-          <div class="pt-6">
+          <div class="max-w-2xl px-4 py-10 mx-auto sm:pt-28 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
-              <!-- <img
-                src={`${imageSrcBase}${adventure.primaryImage._path}`}
-                alt={adventure.title}
-                width={1680}
-                height={320}
-                class="w-full h-full object-center object-cover lg:w-full lg:h-full"
-              /> -->
               <AemImage
               src={`${imageSrcBase}${adventure.primaryImage._path}`}
               alt={adventure.title}

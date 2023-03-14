@@ -7,7 +7,6 @@
     export let price;
     export let duration;
     export let imageSrc;
-    export let showDetails = true;
   
     const aboveFold = ['Bali Surf Camp', 'Beervana in Portland'].includes(title);
   </script>
@@ -25,7 +24,6 @@
         clazz="w-full h-full object-center object-cover lg:w-full lg:h-full"
       />
     </div>
-    {#if showDetails}
     <div class="mt-4 flex justify-between">
       <p class="mt-1 text-sm text-gray-500">{duration}</p>
       <p class="text-sm font-medium text-gray-900">{price}</p>
@@ -37,8 +35,6 @@
           {title}
         </div>
     </a>
-  </h3>
-    {/if}
-
+    </h3>
   </div>
   
