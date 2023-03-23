@@ -1,4 +1,3 @@
-import { fail } from '@sveltejs/kit';
 import { AdventureClient } from '$lib/server/adventures';
 import { PUBLIC_AEM_HOST } from '$env/static/public';
 //import { BYPASS_TOKEN } from '$env/static/private';

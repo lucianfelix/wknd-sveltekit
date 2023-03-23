@@ -56,7 +56,7 @@
               <div>
                 <h3 class="sr-only">Description</h3>
                 <div class="space-y-6">
-                  <div class="text-base text-gray-900" itemprop='description' itemtype='text'>
+                  <div class="text-base text-gray-900" itemprop='description' itemtype='richtext'>
                     {@html adventure.description.html}
                   </div>
                 </div>
@@ -66,7 +66,7 @@
                 <h2 class="text-base font-bold text-gray-900">Itinerary</h2>
 
                 <div class="mt-4 space-y-6">
-                  <div class="text-sm text-gray-600" itemprop='itinerary' itemtype='text'>
+                  <div class="text-sm text-gray-600" itemprop='itinerary' itemtype='richtext'>
                     {@html adventure.itinerary.html}
                   </div>
                 </div>
