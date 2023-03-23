@@ -63,6 +63,7 @@
 	import { quintOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
+  import { PUBLIC_AEM_HOST } from '$env/static/public';
 
 	const [send, receive] = crossfade({
 		duration: d => Math.sqrt(d * 200),
@@ -86,7 +87,7 @@
   export let data;
 
   export let adventures = data.adventures;
-  const imageSrcBase = data.NEXT_PUBLIC_AEM_HOST;
+  const imageSrcBase = PUBLIC_AEM_HOST;
   let categoryFilters = [
     {
       label: 'All',

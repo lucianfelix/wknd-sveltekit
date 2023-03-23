@@ -12,26 +12,25 @@
  */
 
 import AEMHeadless from '@adobe/aem-headless-client-js';
-
-export const NEXT_PUBLIC_AEM_HOST="https://publish-p64257-e147834-cmstg.adobeaemcloud.com"
-export const NEXT_GRAPHQL_ENDPOINT="/content/_cq_graphql/aem-demo-assets/endpoint.json"
+import { PUBLIC_AEM_HOST, PUBLIC_GRAPHQL_ENDPOINT } from '$env/static/public';
+import { AEM_AUTH } from '$env/static/private';
 
 export class AdventureClient {
-  static fromEnv(env /*= process.env*/) {
+  static fromEnv() {
     if (!this.__envClient) {
-      const { NEXT_PUBLIC_AEM_HOST, NEXT_GRAPHQL_ENDPOINT } = env;
       this.__envClient = new AdventureClient({
-        serviceURL: NEXT_PUBLIC_AEM_HOST,
-        endpoint: NEXT_GRAPHQL_ENDPOINT,
+        serviceURL: PUBLIC_AEM_HOST,
+        endpoint: PUBLIC_GRAPHQL_ENDPOINT,
+        auth: AEM_AUTH,
       });
     }
     return this.__envClient;
   }
-  constructor({ serviceURL, endpoint }) {
+  constructor({ serviceURL, endpoint, auth }) {
     this.aemHeadlessClient = new AEMHeadless({
       serviceURL,
       endpoint,
-      //auth: ['admin', 'admin'], // TODO: dynamically set auth based on AEM instance
+      auth,
       fetch
     });
   }

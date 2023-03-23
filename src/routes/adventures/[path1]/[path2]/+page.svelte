@@ -81,6 +81,7 @@
 
 <script>
 	import AemImage from '$lib/components/AemImage.svelte';
+  import { PUBLIC_AEM_HOST } from '$env/static/public';
 
   // /_next/image?url=https%3A%2F%2Fpublish-p64257-e147834-cmstg.adobeaemcloud.com%2Fcontent%2Fdam%2Faem-demo-assets%2Fen%2Fadventures%2Fbali-surf-camp%2FAdobeStock_175749320.jpg&amp;w=3840&amp;q=75
   // 
@@ -90,7 +91,7 @@
   export let adventure = data?.adventure;
   // console.log('adventure', adventure);
 
-  const imageSrcBase = data?.NEXT_PUBLIC_AEM_HOST;
+  const imageSrcBase = PUBLIC_AEM_HOST;
   
   // export const revalidate = 60; // revalidate this page every 60 seconds
 </script>

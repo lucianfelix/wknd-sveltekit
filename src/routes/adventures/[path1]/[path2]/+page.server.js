@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { AdventureClient, NEXT_PUBLIC_AEM_HOST, NEXT_GRAPHQL_ENDPOINT} from '$lib/server/adventures';
+import { AdventureClient } from '$lib/server/adventures';
 //import { BYPASS_TOKEN } from '$env/static/private';
 
 export const config = {
@@ -31,8 +31,6 @@ export async function load({ params }) {
         console.log('adventure',adventure);
         return {
             adventure: adventure,
-            NEXT_PUBLIC_AEM_HOST: NEXT_PUBLIC_AEM_HOST,
-            NEXT_GRAPHQL_ENDPOINT: NEXT_GRAPHQL_ENDPOINT
         }
     } catch (e) {
         console.error(e);
@@ -43,7 +41,7 @@ export async function load({ params }) {
 };
 
 const getAdventureByPath = async (path) => {
-    const client = AdventureClient.fromEnv({NEXT_PUBLIC_AEM_HOST, NEXT_GRAPHQL_ENDPOINT});
+    const client = AdventureClient.fromEnv();
     const res = await client.getAdventureByPath(path);
     const adventure = res?.data?.adventureByPath?.item;
     return adventure;
