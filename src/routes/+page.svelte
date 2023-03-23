@@ -24,6 +24,7 @@
               price={price}
               duration={tripLength}
               imageSrc={`${imageSrcBase}${primaryImage._path}`}
+              itemId={`urn:aemconnection:${_path}/jcr:content/data/master`}
             />
           {/each}
         </Carousel>
@@ -45,6 +46,7 @@
               price={price}
               duration={tripLength}
               imageSrc={`${imageSrcBase}${primaryImage._path}`}
+              itemId={`urn:aemconnection:${_path}/jcr:content/data/master`}
             />
             </div>
           {/each}

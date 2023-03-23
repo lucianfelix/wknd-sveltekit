@@ -2,13 +2,17 @@
 	import Header from './Header.svelte';
 	// import './styles.css';
 	import '../app.postcss';
+	import { PUBLIC_AEM_HOST } from '$env/static/public';
 
 	import { onMount } from 'svelte';
   
 	let headerHeight = 64;
   
-	onMount(() => {
+	onMount(async () => {
 	  window.addEventListener('scroll', handleScroll);
+		if (PUBLIC_AEM_HOST.includes('author')) {
+			await import('@adobe/universal-editor-cors').default;
+		}
 	});
   
 	function handleScroll() {
@@ -22,7 +26,9 @@
 	}
   </script>
   
-
+<svelte:head>
+	<meta name='urn:auecon:aemconnection' content={`aem:${PUBLIC_AEM_HOST}`}/>
+</svelte:head>
 <div class="app">
 	<Header style="height: {headerHeight}px;"/>
 

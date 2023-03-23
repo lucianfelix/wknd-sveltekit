@@ -10,6 +10,8 @@
     export let loading;
     export let sizes;
     export let clazz;
+    export let itemprop;
+    export let itemtype;
     // export let style;
 
     sizes = sizes || '60vw';
@@ -55,4 +57,6 @@
   loading={loading}
   width={width}
   height={height}
+  itemprop={itemprop}
+  itemtype={itemtype}
   />
