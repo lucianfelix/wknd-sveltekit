@@ -36,8 +36,28 @@ export class AdventureClient {
   }
 
   async getAllAdventures() {
-    const queryAdventuresAll = 'aem-demo-assets/adventures-all';
-    const res = await this.aemHeadlessClient.runPersistedQuery(queryAdventuresAll);
+    // const queryAdventuresAll = 'aem-demo-assets/adventures-all';
+    // const res = await this.aemHeadlessClient.runPersistedQuery(queryAdventuresAll);
+    const query = `{
+      adventureList {
+        items {
+          _path
+          title
+          price
+          tripLength
+          primaryImage {
+            ... on ImageRef {
+              _path
+              mimeType
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+    `;
+    const res = await this.aemHeadlessClient.runQuery(query);
     return res;
   }
 
