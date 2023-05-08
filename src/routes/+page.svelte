@@ -1,7 +1,7 @@
 <section class="">
   <div class="bg-white">
-    <div class="max-w-2xl px-4 py-10 mx-auto sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
-      <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">
+    <div class="max-w-2xl px-4 sm:pt-20 lg:pt-20 mx-auto py-16 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h2 class="pb-3 text-2xl font-extrabold tracking-tight text-gray-900">
         Your next adventures can be one of these...
       </h2>
       {#if adventures}
