@@ -15,7 +15,7 @@
   </script>
 
   <div class="group relative" itemscope itemtype='reference' itemfilter='cf' itemid={itemId}>
-    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+    <div class="min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
       <AemImage
         src={imageSrc}
         alt={title}
@@ -24,16 +24,16 @@
         priority={aboveFold}
         loading={aboveFold ? 'eager' : 'lazy'}
         sizes="50vw"
-        clazz="w-full h-full object-center object-cover lg:w-full lg:h-full"
+        clazz="object-cover h-48 w-96 lg:w-full lg:h-full"
         itemprop='primaryImage'
         itemtype='image'
       />
     </div>
     {#if showDetails}
     <div class="mt-1 pt-2 flex">
-      <p class="text-sm text-gray-500 justify-self-start" itemprop='tripLength' itemtype='text'>{duration}</p>
-      <p class="flex-grow text-sm font-medium text-gray-900 justify-self-center"></p>
-      <p class="text-sm font-medium text-gray-900 justify-self-end" itemprop='price' itemtype='text'>{price}</p>
+      <p class="text-sm text-gray-500" itemprop='tripLength' itemtype='text'>{duration}</p>
+      <p class="flex-grow text-sm font-medium text-gray-900"></p>
+      <p class="text-sm font-medium text-gray-900" itemprop='price' itemtype='text'>{price}</p>
     </div>
     <h3 class="font-semibold text-gray-700">
       <a href={href}>
