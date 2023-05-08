@@ -52,7 +52,7 @@
           {/each}
         </div>
       {:else}
-        <div>Adventure could not be loaded. AEM Backend likely hybernated</div>
+        <div>Adventure could not be loaded. AEM Backend likely hibernated</div>
       {/if}
     </div>
   </div>
@@ -60,7 +60,7 @@
 
 <script>
   import AdventureCard from './AdventureCard.svelte';
-  import HeroAdventure from './HeroAdventure.svelte';
+  // import HeroAdventure from './HeroAdventure.svelte';
   import Carousel from './Carousel.svelte';
 	import { quintOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';

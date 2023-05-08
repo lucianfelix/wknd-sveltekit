@@ -29,9 +29,10 @@
       />
     </div>
     {#if showDetails}
-    <div class="mt-4 flex justify-between">
-      <p class="mt-1 text-sm text-gray-500" itemprop='tripLength' itemtype='text'>{duration}</p>
-      <p class="text-sm font-medium text-gray-900" itemprop='price' itemtype='text'>{price}</p>
+    <div class="mt-1 pt-2 flex">
+      <p class="text-sm text-gray-500 justify-self-start" itemprop='tripLength' itemtype='text'>{duration}</p>
+      <p class="flex-grow text-sm font-medium text-gray-900 justify-self-center"></p>
+      <p class="text-sm font-medium text-gray-900 justify-self-end" itemprop='price' itemtype='text'>{price}</p>
     </div>
     <h3 class="font-semibold text-gray-700">
       <a href={href}>
