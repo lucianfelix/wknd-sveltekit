@@ -1,6 +1,6 @@
 <script>
     import AemImage from '$lib/components/AemImage.svelte';
-  
+
     export let _path;
     export let href;
     export let title;
@@ -9,10 +9,10 @@
     export let imageSrc;
     export let itemId;
     export let showDetails = true;
-  
-    const aboveFold = ['Bali Surf Camp', 'Beervana in Portland'].includes(title);
+
+    const aboveFold = ['Surf Camp', 'Beervana in Portland'].includes(title);
   </script>
-  
+
   <div class="group relative" itemscope itemtype='reference' itemfilter='cf' itemid={itemId}>
     <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
       <AemImage
@@ -44,4 +44,3 @@
     {/if}
 
   </div>
-  
