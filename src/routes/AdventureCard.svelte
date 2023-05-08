@@ -24,7 +24,7 @@
         priority={aboveFold}
         loading={aboveFold ? 'eager' : 'lazy'}
         sizes="50vw"
-        clazz="object-cover h-48 w-96 lg:w-full lg:h-full"
+        clazz="object-cover h-48 w-full lg:h-full"
         itemprop='primaryImage'
         itemtype='image'
       />
