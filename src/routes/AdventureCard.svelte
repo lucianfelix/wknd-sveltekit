@@ -10,7 +10,8 @@
     export let itemId;
     export let showDetails = true;
 
-    const aboveFold = ['Surf Camp', 'Beervana in Portland'].includes(title);
+    // const aboveFold = ['Surf Camp', 'Beervana in Portland'].includes(title);
+    const aboveFold = imageSrc.includes("bali-surf-camp");
   </script>
 
   <div class="group relative" itemscope itemtype='reference' itemfilter='cf' itemid={itemId}>
