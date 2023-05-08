@@ -25,12 +25,12 @@
       </div>
     </div>
 
-    <button class="absolute top-1/2 left-2 transform -translate-y-1/2 z-10" on:click={prev}>
+    <button class="absolute top-1/2 left-2 transform -translate-y-1/2 z-10" aria-label={"previous"} on:click={prev}>
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
       </svg>
     </button>
-    <button class="absolute top-1/2 right-2 transform -translate-y-1/2 z-10" on:click={next}>
+    <button class="absolute top-1/2 right-2 transform -translate-y-1/2 z-10" aria-label={"next"} on:click={next}>
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>

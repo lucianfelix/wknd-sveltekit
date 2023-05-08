@@ -31,7 +31,7 @@
 
         <div class=category-buttons>
           {#each categoryFilters as { label, predicate }}
-          <button class="category-button" on:click={() => (filteredAdventures = adventures.filter(predicate))}>{label}</button>
+          <button aria-label={label} class="category-button" on:click={() => (filteredAdventures = adventures.filter(predicate))}>{label}</button>
         {/each}
         </div>
 
