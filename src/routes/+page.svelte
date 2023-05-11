@@ -37,8 +37,8 @@
 
         <div class="grid grid-cols-1 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {#each filteredAdventures as { _path, title, price, tripLength, primaryImage } (_path)}
-          <div in:receive="{{key: _path}}"
-          out:send="{{key: _path}}" animate:flip={{ duration: 300 }}>
+          <div>
+<!--          <div in:receive="{{key: _path}}" out:send="{{key: _path}}" animate:flip={{ duration: 300 }}>-->
             <AdventureCard
               _path={_path}
               href={`/adventures/${_path.split('/').slice(-2).join('/')}`}
@@ -62,28 +62,28 @@
   import AdventureCard from './AdventureCard.svelte';
   // import HeroAdventure from './HeroAdventure.svelte';
   import Carousel from './Carousel.svelte';
-	import { quintOut } from 'svelte/easing';
-	import { crossfade } from 'svelte/transition';
-	import { flip } from 'svelte/animate';
+	// import { quintOut } from 'svelte/easing';
+	// import { crossfade } from 'svelte/transition';
+	// import { flip } from 'svelte/animate';
   import { PUBLIC_AEM_HOST } from '$env/static/public';
 
-	const [send, receive] = crossfade({
-		duration: d => Math.sqrt(d * 200),
-
-		fallback(node, params) {
-			const style = getComputedStyle(node);
-			const transform = style.transform === 'none' ? '' : style.transform;
-
-			return {
-				duration: 300,
-				easing: quintOut,
-				css: t => `
-					transform: ${transform} scale(${t});
-					opacity: ${t}
-				`
-			};
-		}
-	});
+	// const [send, receive] = crossfade({
+	// 	duration: d => Math.sqrt(d * 200),
+    //
+	// 	fallback(node, params) {
+	// 		const style = getComputedStyle(node);
+	// 		const transform = style.transform === 'none' ? '' : style.transform;
+    //
+	// 		return {
+	// 			duration: 300,
+	// 			easing: quintOut,
+	// 			css: t => `
+	// 				transform: ${transform} scale(${t});
+	// 				opacity: ${t}
+	// 			`
+	// 		};
+	// 	}
+	// });
 
   /** @type {import('./$types').PageData} */
   export let data;
