@@ -87,6 +87,7 @@
   /** @type {import('./$types').PageData} */
   export let data;
 
+
   export let adventures = data.adventures;
   const imageSrcBase = PUBLIC_AEM_HOST;
   let categoryFilters = [
