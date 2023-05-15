@@ -1,12 +1,12 @@
 <script>
     import {onMount, tick} from 'svelte';
     import {openMenu} from '../stores/menu.js';
-    import {fly} from 'svelte/transition';
+    import {fly, scale, fade} from 'svelte/transition';
 
     export let style = '';
     let isMenuOpen = false;
     let searchValue = '';
-    let isSearchFocused = false;
+    let isSearchFocused = true;
     let searchInput;
 
     const toggleMenu = () => {
@@ -68,8 +68,10 @@
             </div>
 <!--            <div class="flex-grow"></div>-->
         </nav>
-        <div class="search-modal {isSearchFocused ? 'focused' : 'collapsed'}"
-             transition:fly="{{ y: isSearchFocused ? -200 : 0, duration: 1000 }}">
+        <div transition:fade="{{ duration: 3000 }}"
+             class="search-modal"
+             class:collapsed={!isSearchFocused}
+             class:focused={isSearchFocused}>
             <input
                     bind:this={searchInput}
                     type="text"
@@ -80,7 +82,7 @@
                     on:blur={blurSearch}
                     on:input={(e) => (searchValue = e.target.value)}
             />
-            <button class="search-btn {isSearchFocused ? '' : 'hidden'}" on:click={handleSearch}>Search</button>
+            <button class="search-btn" class:hidden={!isSearchFocused} on:click={handleSearch}>Search</button>
         </div>
         <div class="flex lg:hidden">
             <h1 class="text-gray-800 text-lg font-bold"><a href="/">WKND</a></h1>
@@ -112,23 +114,42 @@
         border-radius: 10px;
         position: relative;
         z-index: 1;
-        transition: opacity 0.5s ease;
+        transition: opacity 2.5s ease;
     }
 
     .search-modal.collapsed {
         border: 0;
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        width: 60px;
     }
 
-    .search-modal.focused {
+    .focused {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 80%;
+
         z-index: 11;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
         opacity: 1;
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -o-transition: all 1s linear;
+        transition: all 1s linear;
     }
+
+    /*.search-modal.focused {*/
+    /*    position: fixed;*/
+    /*    top: 50%;*/
+    /*    left: 50%;*/
+    /*    transform: translate(-50%, -50%);*/
+    /*    width: 80%;*/
+    /*    z-index: 11;*/
+    /*    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);*/
+    /*    opacity: 1;*/
+    /*}*/
 
     .search-input {
         flex-grow: 1;
