@@ -17,6 +17,7 @@
         <Carousel numItems={4}>
           {#each adventures.slice(0, 4) as { _path, title, price, tripLength, primaryImage }}
             <AdventureCard
+                    class="h-full"
               showDetails={false}
               _path={_path}
               href={`/adventures/${_path.split('/').slice(-2).join('/')}`}

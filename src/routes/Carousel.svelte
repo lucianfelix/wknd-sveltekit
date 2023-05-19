@@ -18,9 +18,9 @@
     }
   </script>
 
-  <div class="relative">
+  <div class="">
     <div class="overflow-hidden">
-      <div class="carousel-container flex transition-all duration-500" style="transform: translateX(-{currentIndex * 100}%)">
+      <div class="carousel-container flex transition-all duration-500 h-full" style="transform: translateX(-{currentIndex * 100}%)">
         <slot></slot>
       </div>
     </div>
@@ -40,6 +40,7 @@
   <style>
     .carousel-container {
       width: 100%;
+      height: 300px;
     }
     .carousel-container > :global(*) {
       flex: none;

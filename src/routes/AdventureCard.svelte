@@ -15,7 +15,7 @@
   </script>
 
   <div class="group relative" itemscope itemtype='reference' itemfilter='cf' itemid={itemId}>
-    <div class="min-h-80 sm:h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+    <div class="w-full h-full bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
       <AemImage
         src={imageSrc}
         alt={title}
@@ -24,21 +24,21 @@
         priority={aboveFold}
         loading={aboveFold ? 'eager' : 'lazy'}
         sizes="50vw"
-        clazz="object-cover"
+        clazz="w-full h-full object-center object-cover lg:w-full lg:h-full"
         itemprop='primaryImage'
         itemtype='image'
       />
     </div>
     {#if showDetails}
-    <div class="mt-1 pt-2 flex">
+    <div class="mt-1 pt-2 flex h-7">
       <p class="text-sm text-gray-500" itemprop='tripLength' itemtype='text'>{duration}</p>
       <p class="flex-grow text-sm font-medium text-gray-900"></p>
       <p class="text-sm font-medium text-gray-900" itemprop='price' itemtype='text'>{price}</p>
     </div>
-    <h3 class="font-semibold text-gray-700">
+    <h3 class="font-semibold text-gray-700 h-7">
       <a href={href}>
         <div itemprop='title' itemtype='text'>
-          <span aria-hidden="true" class="absolute inset-0" />
+<!--          <span aria-hidden="true" class="absolute inset-0"></span>-->
           {title}
         </div>
     </a>
