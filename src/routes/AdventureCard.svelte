@@ -16,18 +16,20 @@
 
   <div class="group relative" itemscope itemtype='reference' itemfilter='cf' itemid={itemId}>
     <div class="w-full h-full bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-      <AemImage
-        src={imageSrc}
-        alt={title}
-        width={542}
-        height={605}
-        priority={aboveFold}
-        loading={aboveFold ? 'eager' : 'lazy'}
-        sizes="50vw"
-        clazz="w-full h-full object-center object-cover lg:w-full lg:h-full"
-        itemprop='primaryImage'
-        itemtype='image'
-      />
+      <a href={href}>
+        <AemImage
+          src={imageSrc}
+          alt={title}
+          width={542}
+          height={605}
+          priority={aboveFold}
+          loading={aboveFold ? 'eager' : 'lazy'}
+          sizes="50vw"
+          clazz="w-full h-full object-center object-cover lg:w-full lg:h-full"
+          itemprop='primaryImage'
+          itemtype='image'
+        />
+      </a>
     </div>
     {#if showDetails}
     <div class="mt-1 pt-2 flex h-7">
